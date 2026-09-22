@@ -1,0 +1,37 @@
+---
+title: "QR Codes"
+format: html
+eval: FALSE
+---
+
+# Setup Code
+
+```{r}
+library(qrcode)
+```
+
+```{r}
+QR_Helper <- function(url, output, filename){
+
+code <- qr_code(url)
+
+TheFileName  <- paste0(filename, ".svg")
+
+StoreHere <- file.path(output, TheFileName)
+
+generate_svg(code, filename = StoreHere)
+#plot(code)
+}
+```
+
+# GitHub Repository
+
+# GitHub Repository
+
+[Link](https://github.com/DavidRach/QuirksAndAll_CCC2026)
+
+```{r}
+QR_Helper(url="https://github.com/DavidRach/QuirksAndAll_CCC2026",
+    output="outputs", 
+    filename="QuirksAndAlRepo")
+```
